@@ -61,15 +61,19 @@ def fractal(g, order, size, angle, tear_angle):
 ######################################################################
 
 # initalizing gcode object
-gset = gsettings(graphics='mayavi')
+gset = gsettings(graphics='myplotlib')
 g = gcode(settings = gset)
 
-g.move(0,0,0, speed=50)
+g.move(0,0,0, speed=100)
 
 # populating this object with the fractal position
 makeit(g)
 
-g.cbar_view()
+g.animated()
+
+g.save('try.txt')
+
+#g.cbar_view()
 
 
 

@@ -1,10 +1,11 @@
 import gcody as g
 
 # a file to read 
-file = r'C:\Users\Ryan\Desktop\GithubFiles\gcody\demo\elefante_small.gcode'
+file = '/Volumes/GoogleDrive-104257292494891488592/My Drive/mil/natural_touch/parse_gcode/demo/elefante_small.gcode'
 
 # setting graphics backend to be mayavi
-settings = g.gsettings(graphics='mayavi')
+settings = g.gsettings(graphics='matplotlib')
+
 
 # reading gcode file
 elefante = g.read(file, settings=settings)

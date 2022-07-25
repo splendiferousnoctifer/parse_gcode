@@ -26,6 +26,7 @@ def plot3(history, *args, title=None, give=False, plot_style='default',
     '''
 
     if backend == 'matplotlib':
+        print('hi')
 
         # setting style
         style.use(plot_style)
@@ -37,7 +38,7 @@ def plot3(history, *args, title=None, give=False, plot_style='default',
             fig = plt.figure()                
         
         ax = fig.gca(projection='3d')
-        ax.set_aspect('equal')
+        ax.set_aspect('auto')
 
         # makes history a numpy array
         history = array(history)
@@ -317,7 +318,7 @@ def live_view(animate, *args, loop=60, ax_lim=None, ax_label=None,
     # creating new figure to plot on
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.set_aspect('equal')
+    ax.set_aspect('auto')
 
     # creates the animation
     def animate_loop(i):
