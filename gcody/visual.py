@@ -403,7 +403,8 @@ def slider_view(update, *args, slide_geo=[0.25, 0.1, 0.65, 0.03],
     # creating new figure to plot on
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.set_aspect('equal')
+    ax.set_aspect('auto')
+    
 
     # inital data
     data = update(0)

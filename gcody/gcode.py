@@ -367,7 +367,8 @@ class gcode():
             line.append('S{}'.format(sec))
 
             # writing to memory with time in units of minutes
-            self.write(line, self.current_pos, time/60)
+            self.write(line, self.current_pos, sec/60)
+
             return
 
         elif milisec:
@@ -375,7 +376,8 @@ class gcode():
             line.append('P{}'.format(milisec))
 
             # writing to memory with time in units of minutes
-            self.write(line, self.current_pos, time/(60*1000))
+            self.write(line, self.current_pos, milisec/(60*1000))
+
 
             return
         else:

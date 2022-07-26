@@ -44,7 +44,7 @@ def fractal(g, order, size, angle, tear_angle):
         pos = g.current_pos + size*rotation
 
         # appending this position to motion history
-        g.move(pos.copy())
+        g.rapid_move(pos.copy())
 
     else:
 
