@@ -3,9 +3,9 @@ from gcody import gcode, gsettings
 import numpy as np
 np.set_printoptions(suppress=True) # don't use scientific notation
 
-AMOUNT_COORDS = 1000
+AMOUNT_COORDS = 20
 GCODE_LINES = AMOUNT_COORDS*2
-X_LIM, Y_LIM, Z_LIM = 20, 110, 85
+X_LIM, Y_LIM, Z_LIM = 20, 80, 80
 TOUCH = 20
 
 def get_coordinates():
@@ -41,13 +41,13 @@ g.move(0,0,0, speed = 100)
 g.move(X_LIM,0,0)
 g.dwell(milisec=5000)
 
-g.move(X_LIM, Y_LIM, 0)
-g.move(X_LIM, Y_LIM, Z_LIM)x
-g.move(X_LIM, 0, Z_LIM)
-g.move(X_LIM,0,0)
+#g.move(X_LIM, Y_LIM, 0)
+#g.move(X_LIM, Y_LIM, Z_LIM)
+#g.move(X_LIM, 0, Z_LIM)
+#g.move(X_LIM,0,0)
 
 
-g.dwell(milisec=1000)
+#g.dwell(milisec=1000)
 g.move(0, 0, 0)
 
 
@@ -61,7 +61,7 @@ for i in range(0,GCODE_LINES+1):
       g.move(0, c[i,1], c[i,2])
 
 
-g.save('ten.gcode')
+g.save('first.gcode')
 g.slide_view()
 
 
