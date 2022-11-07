@@ -3,10 +3,10 @@ from gcody import gcode, gsettings
 import numpy as np
 np.set_printoptions(suppress=True) # don't use scientific notation
 
-AMOUNT_COORDS = 100
+AMOUNT_COORDS = 250
 GCODE_LINES = AMOUNT_COORDS*2
 X_LIM, Y_LIM, Z_LIM = 20, 80, 80
-TOUCH = 20
+TOUCH = 15
 
 def get_coordinates():
   c = np.zeros(shape = (AMOUNT_COORDS,3), dtype = float)
@@ -34,7 +34,6 @@ def get_coordinates():
 
 c = get_coordinates()
 
-
 gset = gsettings(graphics='myplotlib')
 g = gcode(settings = gset)
 g.move(0,0,0, speed = 100)
@@ -46,10 +45,8 @@ g.dwell(milisec=5000)
 #g.move(X_LIM, 0, Z_LIM)
 #g.move(X_LIM,0,0)
 
-
 #g.dwell(milisec=1000)
 g.move(0, 0, 0)
-
 
 
 for i in range(0,GCODE_LINES+1):
@@ -61,22 +58,5 @@ for i in range(0,GCODE_LINES+1):
       g.move(0, c[i,1], c[i,2])
 
 
-g.save('first.gcode')
-g.slide_view()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+g.save('new.gcode')
+#g.slide_view()
