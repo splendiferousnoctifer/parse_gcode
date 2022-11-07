@@ -3,7 +3,7 @@ from gcody import gcode, gsettings
 import numpy as np
 np.set_printoptions(suppress=True) # don't use scientific notation
 
-AMOUNT_COORDS = 20
+AMOUNT_COORDS = 100
 GCODE_LINES = AMOUNT_COORDS*2
 X_LIM, Y_LIM, Z_LIM = 20, 80, 80
 TOUCH = 20
@@ -63,6 +63,8 @@ for i in range(0,GCODE_LINES+1):
 
 g.save('first.gcode')
 g.slide_view()
+
+
 
 
 
