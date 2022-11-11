@@ -3,21 +3,21 @@ from gcody import gcode, gsettings
 import numpy as np
 np.set_printoptions(suppress=True) # don't use scientific notation
 
-AMOUNT_COORDS = 250
+AMOUNT_COORDS = 50
 GCODE_LINES = AMOUNT_COORDS*2
 X_LIM, Y_LIM, Z_LIM = 20, 80, 80
-TOUCH = 15
+TOUCH = np.asarray([10, 15, 20])
 
 def get_coordinates():
   c = np.zeros(shape = (AMOUNT_COORDS,3), dtype = float)
   for i in range(0,AMOUNT_COORDS):
-    c[i,0] = TOUCH
+    c[i,0] = TOUCH[np.random.choice(TOUCH.shape[0],1, replace=False)]
     c[i,1] = round(np.random.uniform(0,Y_LIM), 3)
     c[i,2] = round(np.random.uniform(0,Z_LIM), 3)
 
 
   #sort by z-axis
-  c = c[c[:, 2].argsort()]
+  #c = c[c[:, 2].argsort()]
 
 
   gc = np.zeros(shape = (GCODE_LINES+1,3), dtype = float)
