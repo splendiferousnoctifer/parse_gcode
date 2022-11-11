@@ -3,7 +3,7 @@ from gcody import gcode, gsettings
 import numpy as np
 np.set_printoptions(suppress=True) # don't use scientific notation
 
-AMOUNT_COORDS = 50
+AMOUNT_COORDS = 250
 GCODE_LINES = AMOUNT_COORDS*2
 X_LIM, Y_LIM, Z_LIM = 20, 80, 80
 TOUCH = np.asarray([10, 15, 20])
@@ -58,5 +58,5 @@ for i in range(0,GCODE_LINES+1):
       g.move(0, c[i,1], c[i,2])
 
 
-g.save('new.gcode')
+g.save('test_samples.gcode')
 #g.slide_view()
